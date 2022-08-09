@@ -16,6 +16,7 @@ import VolunteerExperience from "@/components/Volunteering/VolunteerExperience";
 import { NextSeo } from "next-seo";
 import { baseUrl } from "../constants";
 import { sznmOgImage } from "../utils/sznmOgImage";
+import { SocialProfileJsonLd } from 'next-seo';
 type Props = {
   videos: Video[];
   posts: BlogPost[];
@@ -42,7 +43,20 @@ const Home = ({ videos, posts }: Props) => {
           ],
 
         }}
+        
       />
+      <SocialProfileJsonLd
+      type="Person"
+      name="Sarmad Gardezi"
+      url="http://www.sarmadgardezi.com"
+      sameAs={[
+        'http://www.facebook.com/sarmadgardezi',
+        'http://instagram.com/sarmadgardezi',
+        'http://twitter.com/sarmadgardezi',
+        'http://www.linkedin.com/in/sarmadgardezi',
+        'http://youtube.com/c/sarmadgardezi',
+      ]}
+    />
     <PageTransition>
       <Hero />
       <CoursesSection courses={courses} />
