@@ -10,6 +10,7 @@ import {
   HStack,
   Text,
   Divider,
+  Stack, Box, Flex, Avatar 
 } from '@chakra-ui/react';
 
 import ViewCounter from '../../components/ViewCounter'
@@ -23,6 +24,8 @@ import ScrollToTopButton from '@/components/scroll-to-top-button';
 import { NextSeo } from "next-seo";
 import { baseUrl } from "../../constants";
 import { sznmOgImage } from "../../utils/sznmOgImage";
+import Twemoji from "../../components/Twemoji";
+
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
 };
@@ -33,6 +36,7 @@ const BlogPostPage = ({
   date,
   source,
   readingTime,
+  thumbnail,
 }: Props) => {
   const ogImage = sznmOgImage({
     siteName: title,
@@ -59,36 +63,64 @@ const BlogPostPage = ({
           ],
         }}
       />
+     
       <VStack position="relative" alignItems="stretch" w="full" spacing={8}>
-        <VStack alignItems="flex-start" spacing={3}>
-          <Heading as="h1" size="lg">
-            {title}
-          </Heading>
-          <HStack
-            divider={
-              <Text mx={2} color="gray.500">
-                •
-              </Text>
-            }
-          >
-            <Text color="gray.500" fontSize="sm">
-              {format(date)}
-            </Text>
-            <Text color="gray.500" fontSize="sm">
-            <ViewCounter slug={slug}/>
-            </Text>
-            <Text color="gray.500" fontSize="sm" >
-            📖 {readingTime}
-            </Text>
-          </HStack>
-        </VStack>
+      <Flex alignItems="center">
+    
+    <Stack
+      w={['100vw', '95vw']}
+      maxW="680px"
+      p={['20px', '20px', '24px', '24px']}
+    >
+       <Box flexBasis={["80%"]}>
+      <Heading
+        fontSize={['3xl', '3xl', '5xl', '5xl']}
+        color="displayColor"
+      >
+      {title}
+      </Heading>
+      </Box>
+    
+      <Stack
+        py={4}
+        direction={{ base: 'column', md: 'row' }}
+        alignItems="baseline"
+        justifyContent="space-between"
+      >
+        <Stack isInline alignItems="center">
+          <Avatar
+            name="Sarmad Gardezi"
+            size="xs"
+            src="https://avatars.githubusercontent.com/u/18191721?v=4"
+            border="1px solid textPrimary"
+          />
+          <Text fontSize={['xs', 'xs', 'sm', 'sm']} color="textPrimary">
+            Sarmad Gardezi /{' '} {readingTime}
+        
+          </Text>
+        </Stack>
+        <Stack>
+          <Text fontSize={['xs', 'xs', 'sm', 'sm']} color="textSecondary">
+          {format(date)} /  <ViewCounter slug={slug}/>
+          </Text>
+        
+        </Stack>
+      </Stack>
+    </Stack>
+    
+  <Flex flexBasis={["20%"]}>
+        <Box marginRight="13%" width="80%">
+        <Twemoji emoji={thumbnail ?? "📘"} />
+        </Box>
+      </Flex>
+  </Flex>
+
         <MDXRemote {...source} components={MDXComponents} />
         <Divider />
         <HStack>
          
 </HStack>
       </VStack>
-      
       <ScrollToTopButton />
     </>
   );
@@ -109,7 +141,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const postContent = await readBlogPost(slug);
   const {
     content,
-    data: { title, description, date },
+    data: { title, description, date, thumbnail },
   } = matter(postContent);
 
   return {
@@ -124,6 +156,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
       description,
       date,
       slug,
+      thumbnail,
     },
   };
 };

@@ -3,7 +3,6 @@ import type { DefaultSeoProps } from "next-seo";
 // https://github.com/garmeeh/next-seo#nextseo-options
 export const defaultSEOConfig: DefaultSeoProps = {
   title: "Sarmad Gardezi",
-  titleTemplate: "%s | Sarmad Gardezi",
   defaultTitle: "a Freelance Stack Developer",
   description: "React, Gastby, WordPress Developer, tech enthusiast and entrepreneur from Islamabad, Pakistan.",
   canonical: "https://sarmadgardezi.com",
