@@ -75,10 +75,10 @@ const Footer = () => {
           </VStack>
           <VStack spacing={4} alignItems="flex-start">
             <Text fontSize="md" fontWeight="bold">
-              Community
+              Links
             </Text>
             <VStack spacing={2} alignItems="flex-start" color="gray.500">
-              <CustomLink>Chat on Discord</CustomLink>
+              <CustomLink href="/skills/">Skill's</CustomLink>
               <CustomLink>Follow on Twitter</CustomLink>
               <CustomLink>Follow on Github</CustomLink>
               <CustomLink>Github discussions</CustomLink>

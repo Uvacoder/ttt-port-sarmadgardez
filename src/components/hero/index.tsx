@@ -61,14 +61,13 @@ const Hero = () => {
           </Heading>
         </Stack>
         <Text as="h2" lineHeight="175%">
-        I’m a full-stack engineer, a designer, and a content creator. I work
-          at <ExternalLink href="https://zeuzmedia.com">Zeuz Media</ExternalLink>{' '}
-          as a <strong>developer/designer</strong>, and I’m a{' '}
+        I’m a full-stack Developer and a content creator. I work
+        as a  <strong>UX UI Developer</strong>, at <ExternalLink href="https://zeuzmedia.com">Zeuz Media</ExternalLink>{' '}
+          & I’m a{' '}
           <strong>core member</strong> at{' '}
           <ExternalLink href="https://gdgcloudislamabad.com">GDG Cloud isb</ExternalLink>,
           contributing as a <strong>Social Media Advisor</strong>. I’m also an{' '}
-          <ExternalLink href="https://egghead.io">egghead.io</ExternalLink>{' '}
-          <strong>instructor</strong>.
+          <ExternalLink href="https://youtube.com/c/sarmadgardezi">YouTuber</ExternalLink>{' '} How to Tech Guider <strong>instructor</strong>.
         </Text>
         <Grid gap={{ base: 3, lg: 6 }}
                 templateColumns={{
