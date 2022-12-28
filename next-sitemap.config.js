@@ -1,17 +1,7 @@
-const siteUrl = "https://sarmadgardezi.com";
-
-module.exports = {
-  siteUrl,
+/** @type {import('next-sitemap').IConfig} */
+const config = {
+  siteUrl: 'https://sarmadgardezi.com',
   generateRobotsTxt: true,
-  sitemapSize: 7000,
-  robotsTxtOptions: {
-    policies: [
-      { userAgent: "*", disallow: "/secret" },
-      { userAgent: "*", allow: "/" },
-    ],
-    additionalSitemaps: [
-      `${siteUrl}/sitemap/sitemap-index.xml`,
-    ],
-  },
-  exclude: ["/secret"],
 };
+
+module.exports = config;
