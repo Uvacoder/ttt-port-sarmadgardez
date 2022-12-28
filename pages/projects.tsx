@@ -14,7 +14,7 @@ import metadata from '../components/Layout/metadata.json';
 const baseUrl = getBaseUrl();
 
 const seoProps = generateSeoProps({
-  url: `${baseUrl}/faqs`,
+  url: `${baseUrl}/projects`,
  
 });
 
