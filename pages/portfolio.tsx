@@ -16,6 +16,15 @@ AspectRatio,
 useColorModeValue as mode} from "@chakra-ui/react"; 
 import { HeroSection } from '../sections/PortfolioPage/hero';
 import { styled } from '@config/stitches.config';
+import { generateSeoProps } from '@config/seo.config';
+import { getBaseUrl } from '@utils/getBaseUrl';
+
+const baseUrl = getBaseUrl();
+
+const seoProps = generateSeoProps({
+  url: `${baseUrl}/portfolio`,
+ 
+});
 
 const ContactSectionSection = styled('section', {
   '> div': {
