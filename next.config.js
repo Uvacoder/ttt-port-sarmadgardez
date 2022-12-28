@@ -1,32 +1,56 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { withPlaiceholder } = require('@plaiceholder/next');
-const { withNextBanner } = require('next-banner');
-
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
+  typescript: {
+  
+    ignoreBuildErrors: true,
+  },
   reactStrictMode: true,
-  output: 'standalone',
   images: {
-    domains: ['avatars.githubusercontent.com'],
-    minimumCacheTTL: 3600,
-  },  
-};
+    domains: [
+      'img.youtube.com',
+      'i.imgur.com',
+      'i.ytimg.com',
+    ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/start-blog-in-pakistan-guide-2020',
+        destination: '/blog/start-blog-in-pakistan-guide-2020',
+        permanent: true,
+      },
+      {
+        source: '/blog/earning/teenagers-make-money-pakistan/2709',
+        destination: '/blog/teenagers-make-money-pakistan',
+        permanent: true,
+      },
+      {
+        source: '/blog/instagram/verify-instagram-account-pakistan/6578',
+        destination: '/blog/verify-instagram-account-pakistan',
+        permanent: true,
+      },
+      {
+        source: '/blog/freelancing/photographers-earn-money-pakistan/7147',
+        destination: '/blog/photographers-earn-money-pakistan',
+        permanent: true,
+      },
+      {
+        source: '/blog/earning/earn-money-shutterstock-pakistan/2580',
+        destination: '/blog/earn-money-shutterstock-pakistan',
+        permanent: true,
+      },
+    ]
+  },
+  
+}
 
-module.exports =  withPlaiceholder(
- 
-  withNextBanner({
-    nextBanner: {
-      domain: 'https://sarmadgardezi.com',
-      layoutDir: 'og-image',
-      outputDir: 'images/og-image',
-     
-    },
-    typescript: {
-  
-      ignoreBuildErrors: true,
-    },
-    ...nextConfig,
-  })
-  
-  
-);
+const config = {
+  siteUrl: 'https://sarmadgardezi.com',
+  generateRobotsTxt: true,
+  exclude: ['/server-sitemap-index.xml'], // <= exclude here
+  robotsTxtOptions: {
+    additionalSitemaps: [
+      'https://example.com/sitemap/sitemap-index.xml', // <==== Add here
+    ],
+  },
+}
