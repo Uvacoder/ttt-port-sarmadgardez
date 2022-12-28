@@ -148,7 +148,7 @@ export const getStaticProps = async context => {
 
     if (!bookmarks) {
         return {
-            notFound: true,
+            notFound: false,
         };
     }
 
