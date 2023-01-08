@@ -34,7 +34,7 @@
     "mdx-bundler": "^9.0.0",
     "motion": "^10.8.1",
     "next": "^12.1.7-canary.48",
-    "next-banner": "^1.2.53",
+    "next-banner": "^1.2.188",
     "next-plausible": "^3.2.0",
     "next-seo": "^5.4.0",
     "next-sitemap": "^3.1.1",
@@ -59,7 +59,7 @@
   "devDependencies": {
     "next-usequerystate": "^1.7.2",
     "next-i18next": "^11.3.0",
-    "@chakra-ui/react": "^1.7.3",
+    "@chakra-ui/react": "^2.4.6",
     "@ctrl/react-adsense": "^1.6.0",
     "firebase": "^9.9.0",
     "firebase-admin": "^11.0.0",
